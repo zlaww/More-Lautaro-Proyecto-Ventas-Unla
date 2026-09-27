@@ -10,10 +10,6 @@ async def root():
     return {"message": "API REST de Ventas - UNLa"}
 
 
-# ==========================================
-# ENDPOINTS PRODUCTOS (ABM COMPLETO)
-# ==========================================
-
 @app.get("/productos", status_code=status.HTTP_200_OK)
 async def obtener_productos():
     try:
@@ -120,9 +116,7 @@ async def eliminar_producto(producto_id: int):
         )
 
 
-# ==========================================
-# ENDPOINTS VENTAS (ABM COMPLETO)
-# ==========================================
+
 
 @app.get("/ventas", status_code=status.HTTP_200_OK, response_model=list[VentaResponse])
 async def obtener_ventas():
